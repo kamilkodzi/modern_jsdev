@@ -2,6 +2,8 @@ const firstName="Will";
 const lastName="Hannibal";
 const age=36;
 let val;
+const str="Hello there my name is Brad";
+const tags="web design,web forms";
 
 val=firstName+lastName;
 
@@ -33,7 +35,7 @@ val=lastName.toLowerCase();
 val=firstName[2];
 
 
-//indexOf
+//indexOf()
 val=firstName.indexOf("l");
 val=firstName.lastIndexOf("l");
 
@@ -46,6 +48,28 @@ val=firstName.charAt(firstName.length -1);
 
 //substring()
 val=firstName.substring(0,4);
+
+
+val = firstName.slice(-3);
+
+
+//split()
+
+val = str.split(" ");
+val= tags.split(",");
+
+//replace()
+
+val=str.replace("Brad","Kamil");
+
+
+//includes()
+val=str.includes("Hello");
+
+
+
+
+
 
 
 console.log(val);
