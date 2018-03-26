@@ -8,7 +8,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/mathObject/index.ejs'));
+  res.render(path.join(__dirname+'/modules/stringMethods/index.ejs'));
 });
   
 
