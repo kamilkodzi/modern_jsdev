@@ -8,7 +8,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/functionDeclarationExpression/index.ejs'));
+  res.render(path.join(__dirname+'/modules/generalLoops/index.ejs'));
 });
   
 
