@@ -8,7 +8,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/mouseEvents/index.ejs'));
+  res.render(path.join(__dirname+'/modules/inputEventsKeyboard/index.ejs'));
 });
   
 
