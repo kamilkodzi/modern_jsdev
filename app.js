@@ -8,7 +8,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/eventBubling/index.ejs'));
+  res.render(path.join(__dirname+'/modules/Project1 TaskList/index.ejs'));
 });
   
 
