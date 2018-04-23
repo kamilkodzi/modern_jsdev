@@ -1,7 +1,7 @@
 //Define UI Vars
 const form=document.querySelector("#task-form");
 const taskList = document.querySelector(".collection");
-const cleanBtn= document.querySelector(".clear-tasks");
+const clearBtb= document.querySelector(".clear-tasks");
 const filter =document.querySelector("#filter");
 const taskInput= document.querySelector("#task");
 
@@ -13,6 +13,12 @@ loadEventListeners();
 function loadEventListeners(){
     //Add task event
     form.addEventListener("submit",addTask);
+    // Remove task event
+    taskList.addEventListener("click",removeTask);
+    //Clear task event
+    clearBtb.addEventListener("click",clearTask);
+    //Filter tasks event
+    filter.addEventListener("keyup",filterTasks);
 }
 
 
@@ -46,4 +52,38 @@ function addTask(e){
     
     
     e.preventDefault();
+}
+
+//Remove Task
+function removeTask(e){
+    if(e.target.parentElement.classList.contains("delete-item")){
+        if(confirm("Are yu sure?")){
+          e.target.parentElement.parentElement.remove();  
+        }
+    }
+}
+
+//Clear Task
+function clearTask(){
+    // taskList.innerHTML='';
+    
+    // Faster - 50-60 %
+    while(taskList.firstChild){
+        taskList.removeChild(taskList.firstChild);
+    }
+}
+
+function filterTasks(e){
+    const text=e.target.value.toLowerCase();
+  
+    document.querySelectorAll('.collection-item').forEach
+        (function(task){
+            const item=task.firstChild.textContent;
+            if(item.toLowerCase().indexOf(text)!= -1){
+               task.style.display="block";
+            }else{
+               task.style.display="none";
+            }
+        });
+    
 }
