@@ -43,9 +43,12 @@ function addTask(e){
     link.innerHTML='<i class="fa fa-remove"></i>';
     //Append the link to li
     li.appendChild(link);
-    
     //Append li to ul
     taskList.appendChild(li);
+    //Store in LS
+    storeTaskLocalStorage(taskInput.value);
+    
+    
     
     //Clear input
     taskInput.value='';
@@ -53,6 +56,22 @@ function addTask(e){
     
     e.preventDefault();
 }
+
+
+// Store Task
+function storeTaskLocalStorage(task){
+    let tasks;
+    if(localStorage.getItem('tasks')===null){
+        tasks=[];
+    }else{
+        tasks=JSON.parse(localStorage.getItem('tasks'));
+    }
+    
+    tasks.push(task);
+    localStorage.setItem('task',JSON.stringify(tasks));
+}
+
+
 
 //Remove Task
 function removeTask(e){
