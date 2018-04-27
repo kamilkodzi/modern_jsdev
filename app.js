@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/Project3 NumberGuesser/index.ejs'));
+  res.render(path.join(__dirname+'/modules/constructorThis/index.ejs'));
 });
   
 
