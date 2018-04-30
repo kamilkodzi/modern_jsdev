@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/objectCreate/index.ejs'));
+  res.render(path.join(__dirname+'/modules/es6ClassesInherit/index.ejs'));
 });
   
 
