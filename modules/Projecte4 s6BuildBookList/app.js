@@ -92,7 +92,7 @@ document.getElementById('book-form').addEventListener('submit',function(e){
     }
     
     e.preventDefault();
-})
+});
 
 // Event listener for delete
 document.getElementById('book-list').addEventListener('click',function(e){
