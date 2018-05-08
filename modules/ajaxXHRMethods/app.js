@@ -5,14 +5,39 @@ function loadData(){
     const xhr= new XMLHttpRequest();
     
     // OPEN
+    
     xhr.open('GET','ajaxXHRMethods/data.txt',true);
     
+    // New syntax
     xhr.onload=function(){
         if(this.status===200){
-            console.log(this.responseText);
+            // console.log('READY STATE', xhr.readyState);
+            // console.log(this.responseText);
+            document.getElementById("output").innerHTML=`<h1>${this.responseText}</h1>`;
             
         }
     };
+    
+    
+    // Optional - used for spinners/loaders
+    xhr.onprogress= function(){
+        console.log('READY STATE', xhr.readyState);
+    };
+    
+    xhr.onerror=function(){
+        console.log('Request error...');
+    };
+    
+    
+    //OLD SYNTAX
+    // xhr.onreadystatechange= function(){
+    //     console.log('READY STATE', xhr.readyState);
+    //   if(this.status===200 && this.readyState===4){ 
+    //       console.log(this.responseText);
+    //   }
+        
+    // };
+    
     
     xhr.send();
     
