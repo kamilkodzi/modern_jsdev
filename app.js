@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/easyHttp/index.ejs'));
+  res.render(path.join(__dirname+'/modules/promisesES6/index.ejs'));
 });
   
 
