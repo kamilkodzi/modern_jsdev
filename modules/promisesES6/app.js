@@ -3,11 +3,18 @@ const posts = [
         {title:"Post One", body:"This i post one"}
     ];
     
-function createPost(post,callback){
-    setTimeout(function(){
+function createPost(post){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
         posts.push(post);
-        callback();
-    },2000);
+        const error=true;
+        if(!error){
+            resolve();
+        }else{
+            reject('Error Something went wrong!');
+        }
+        },2000);
+    });
 }
 
 function getPosts(){
@@ -21,4 +28,11 @@ function getPosts(){
 }
 
 
-createPost({title:"Post three",body:"This is post three"},getPosts);
+createPost({title:"Post three",body:"This is post three"})
+.then(getPosts)
+.catch(function(err){
+    console.log(err);
+});
+
+
+
