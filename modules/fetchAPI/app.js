@@ -16,10 +16,8 @@ function getText(){
 //Get Local json file
 function getJson(){
     fetch('fetchAPI/post.json')
-        .then(function(res){
-            return res.json();
-    })
-    .then(function(data){ // there should be arrow function- it will be soon
+    .then(res=>res.json())
+    .then(data=>{ // there should be arrow function- it will be soon
        console.log(data);
        let output = '';
        data.forEach(function(post){
@@ -27,18 +25,14 @@ function getJson(){
        });
        document.getElementById('output').innerHTML=output;
     })
-    .catch(function(err){
-       console.log(err); 
-    });
+    .catch(err=>console.log(err));
 }
 
 //Get External API
 function getExternal(){
     fetch('https://api.github.com/users')
-        .then(function(res){
-            return res.json();
-    })
-    .then(function(data){ // there should be arrow function- it will be soon
+    .then(res=>res.json())
+    .then(data=>{ // there should be arrow function- it will be soon
        console.log(data);
        let output = '';
        data.forEach(function(user){
@@ -46,7 +40,5 @@ function getExternal(){
        });
        document.getElementById('output').innerHTML=output;
     })
-    .catch(function(err){
-       console.log(err); 
-    });
+    .catch(err=>console.log(err));
 }
