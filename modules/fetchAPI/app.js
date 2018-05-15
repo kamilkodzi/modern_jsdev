@@ -5,16 +5,12 @@ document.getElementById('button3').addEventListener('click',getExternal);
 //Get Local text file
 function getText(){
     fetch('fetchAPI/test.txt')
-        .then(function(res){
-            return (res.text());
-    })
-    .then(function(data){ // there should be arrow function- it will be soon
+    .then(res=>res.text())
+    .then(data=>{ // there should be arrow function- it will be soon
        console.log(data); 
        document.getElementById('output').innerHTML=data;
     })
-    .catch(function(err){
-       console.log(err); 
-    });
+    .catch(err=>console.log(err));
 }
 
 //Get Local json file
