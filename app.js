@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/Project7 weatherAPI/index.ejs'));
+  res.render(path.join(__dirname+'/modules/eRRHandlingWithTryCatch/index.ejs'));
 });
   
 
