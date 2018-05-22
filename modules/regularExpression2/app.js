@@ -31,8 +31,23 @@ re=/^([0-9]x){3}$/;
 
 
 
+// Shorthand Character Classes
+re=/\w/;   // Word character - alphanumeric (letter / number) or _
+re=/\w+/;  // + = one or more
+re=/\W/;  // Uppercase W - Non-Word character
+re=/\d/;  // Match any digit
+re=/\d+/;  // Match any digit 0 or more time
+re=/\D/; // Match any Non-digit 
+re=/\s/; // Match any whitespace char
+re=/\S/; // Match any Non-whitespace char
+re=/Hell\b/i;  // Word boundary - catch whole word not only part whith we`re looking for s Hello  <--  won`t be catched
+
+// Assertions
+re=/x(?=y)/;  // Match x only if followed by y
+re=/x(?!y)/;  // Match x only if NOT followed by y
+
 // String to match
-const str='3x3x3x3x3x3x3x3x3x3x3x3x';
+const str='sadsadsxdyasdas';
 
 
 // Log Results
