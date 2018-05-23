@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/iteratorsAndGenerators/index.ejs'));
+  res.render(path.join(__dirname+'/modules/symbols/index.ejs'));
 });
   
 
