@@ -7,7 +7,7 @@ app.use(express.static("modules"));
 
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname+'/modules/ES6 Sets/index.ejs'));
+  res.render(path.join(__dirname+'/modules/Patterns Module and revealing Module/index.ejs'));
 });
   
 
